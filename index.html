@@ -1,0 +1,170 @@
+<title>Signum — Ferramentas Internas</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: #fff;
+    color: #1a1a1a;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header {
+    background: #D41317;
+    padding: 16px 40px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .header-title { color: #fff; font-size: 1.1rem; font-weight: 700; letter-spacing: .03em; }
+  .header-sep { color: rgba(255,255,255,.4); font-size: 1.1rem; }
+  .header-sub { color: rgba(255,255,255,.75); font-size: .95rem; }
+
+  main {
+    flex: 1;
+    max-width: 860px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 48px 40px;
+  }
+
+  .page-title { font-size: 1.4rem; font-weight: 700; margin-bottom: 6px; }
+  .page-desc { font-size: .95rem; color: #666; margin-bottom: 36px; }
+
+  .tool-list { display: flex; flex-direction: column; }
+
+  .tool-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 22px 0;
+    border-bottom: 1px solid #eee;
+  }
+  .tool-row:first-child { border-top: 1px solid #eee; }
+
+  .tool-info { flex: 1; min-width: 0; }
+  .tool-name { font-size: 1rem; font-weight: 600; color: #1a1a1a; margin-bottom: 3px; }
+  .tool-desc { font-size: .875rem; color: #666; line-height: 1.5; }
+  .tool-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+  .tag {
+    font-size: .72rem; color: #999;
+    background: #f4f4f4; border: 1px solid #e5e5e5;
+    padding: 2px 8px; border-radius: 2px;
+  }
+
+  .btn-download {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #D41317;
+    color: #fff;
+    font-family: inherit;
+    font-size: .875rem;
+    font-weight: 600;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: background .15s;
+  }
+  .btn-download:hover { background: #a80f12; }
+
+  .tool-row.coming .btn-download {
+    background: #e5e5e5;
+    color: #aaa;
+    pointer-events: none;
+  }
+
+  .note {
+    margin-top: 32px;
+    font-size: .85rem;
+    color: #888;
+    padding-left: 12px;
+    border-left: 3px solid #D41317;
+    line-height: 1.6;
+  }
+
+  .footer {
+    border-top: 1px solid #eee;
+    padding: 16px 40px;
+    font-size: .8rem;
+    color: #aaa;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  @media (max-width: 600px) {
+    .header { padding: 14px 20px; }
+    main { padding: 32px 20px; }
+    .footer { padding: 14px 20px; }
+    .tool-row { flex-direction: column; align-items: flex-start; gap: 14px; }
+    .btn-download { width: 100%; justify-content: center; }
+  }
+</style>
+
+<header class="header">
+  <span class="header-title">Signum</span>
+  <span class="header-sep">·</span>
+  <span class="header-sub">Portal de Ferramentas</span>
+</header>
+
+<main>
+  <h1 class="page-title">Ferramentas disponíveis</h1>
+  <p class="page-desc">Clica em "Descarregar" para obter sempre a versão mais recente de cada ferramenta.</p>
+
+  <div class="tool-list">
+
+    <div class="tool-row">
+      <div class="tool-info">
+        <div class="tool-name">Signum Nextbitt</div>
+        <div class="tool-desc">Preenche automaticamente o Fecho Global de OT's no Nextbitt com os dados extraídos do relatório de inspeção em PDF.</div>
+        <div class="tool-tags">
+          <span class="tag">Windows 10 / 11</span>
+          <span class="tag">64-bit</span>
+          <span class="tag">Requer Firefox + Tampermonkey</span>
+        </div>
+      </div>
+      <a class="btn-download"
+         href="https://github.com/signum-pt/signum-nextbitt/releases/latest/download/SignumNextbitt.exe"
+         download>
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+          <path d="M7.5 2v8M4.5 7l3 3 3-3" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2 12h11" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+        Descarregar
+      </a>
+    </div>
+
+    <div class="tool-row coming">
+      <div class="tool-info">
+        <div class="tool-name" style="color:#aaa;">Nova ferramenta <span style="font-size:.75rem;font-weight:400;">(em breve)</span></div>
+        <div class="tool-desc">Mais ferramentas a caminho. Volta a visitar este portal para aceder às novidades.</div>
+      </div>
+      <a class="btn-download">
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+          <path d="M7.5 2v8M4.5 7l3 3 3-3" stroke="#aaa" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2 12h11" stroke="#aaa" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+        Indisponível
+      </a>
+    </div>
+
+  </div>
+
+  <p class="note">
+    O botão descarrega sempre a versão mais recente automaticamente.<br>
+    Em caso de dúvidas fala com <strong>Renato Leitão</strong>.
+  </p>
+</main>
+
+<footer class="footer">
+  <span>by rsleitao</span>
+  <span>Portal interno · uso exclusivo da equipa</span>
+</footer>
